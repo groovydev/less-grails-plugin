@@ -25,7 +25,10 @@ grails.project.dependency.resolution = {
 //        mavenRepo "https://oss.sonatype.org/content/repositories/releases/"
     }
     plugins {
-        build ":resources:1.1.6"
+        build ":resources:latest.integration"
+        build(":release:latest.integration") {
+            export = false
+        }
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
