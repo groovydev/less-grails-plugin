@@ -1,9 +1,9 @@
-<plugin name='less-resources' version='1.3.0.1' grailsVersion='1.3.7 &gt; *'>
+<plugin name='less-resources' version='1.3.0.2' grailsVersion='1.3.7 &gt; *'>
   <author>Karol Balejko</author>
   <authorEmail>kb@groovydev.com</authorEmail>
   <title>Plugin LESS files resource mapper</title>
   <description>Provides LESS files resource mapper. Compile .less files into .css files. Less compiler based on less.js (LESS - Leaner CSS v1.3.0 http://lesscss.org)</description>
-  <documentation>http://grails.org/plugin/less-resources</documentation>
+  <documentation>https://github.com/groovydev/less-grails-plugin/blob/master/README.md</documentation>
   <resources>
     <resource>BuildConfig</resource>
     <resource>Config</resource>
