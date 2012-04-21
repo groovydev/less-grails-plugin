@@ -39,7 +39,7 @@ class Shell {
 //            println "test exists: ${file}"
             if (file.exists()) {
 //                println "found file: ${file}"
-                return "file://${file.absolutePath}" as String
+                return file.toURI().toString();
             }
         }
 
