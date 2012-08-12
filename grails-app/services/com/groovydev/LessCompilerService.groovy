@@ -24,10 +24,11 @@ class LessCompilerService {
             ScriptableObject scope = cx.initStandardObjects()
 
             def pathstext = paths.collect{
-                if (it.endsWith(File.separator)) {
-                    "'${it}'"
+                def p = it.replaceAll("\\\\", "/")
+                if (p.endsWith("/")) {
+                    "'${p}'"
                 } else {
-                    "'${it}${File.separator}'"
+                    "'${p}/'"
                 }
             }.toString()
 
@@ -37,10 +38,11 @@ class LessCompilerService {
             script.append(loadResource('hooks.js'))
             script.append(loadResource('less-1.3.0.js'))
             script.append(loadResource('compile.js'))
-            script.append("compile('${source}', ${pathstext});" as String)
 
-            def result = cx.evaluateString(scope, script.toString(), "<script>", 1, null);
+            def sourceFileName = source.absolutePath.replaceAll("\\\\", "/");
+            script.append("compile('${sourceFileName}', ${pathstext});" as String)
 
+            def result = cx.evaluateString(scope, script.toString(), "<script>", 1, null)
             def css = cx.toString(result)
             target.text = css
         } finally {
