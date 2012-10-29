@@ -16,14 +16,11 @@ grails.project.dependency.resolution = {
     }
     plugins {
         build ":resources:latest.integration"
-        build(":release:latest.integration") {
+        build(":release:2.0.4", ":rest-client-builder:1.0.2") {
             export = false
         }
     }
     dependencies {
-        build(":release:2.0.4", ":rest-client-builder:1.0.2") {
-            export = false
-        }
         runtime 'org.mozilla:rhino:1.7R3'
     }
 }
