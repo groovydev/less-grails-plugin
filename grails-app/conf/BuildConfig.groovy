@@ -21,7 +21,9 @@ grails.project.dependency.resolution = {
         }
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+        build(":release:2.0.4", ":rest-client-builder:1.0.2") {
+            export = false
+        }
         runtime 'org.mozilla:rhino:1.7R3'
     }
 }
