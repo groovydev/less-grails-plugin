@@ -15,7 +15,7 @@ grails.project.dependency.resolution = {
         grailsCentral()
     }
     plugins {
-        build ":resources:latest.integration"
+        runtime ":resources:1.2.RC2"
         build(":release:2.0.4", ":rest-client-builder:1.0.2") {
             export = false
         }
