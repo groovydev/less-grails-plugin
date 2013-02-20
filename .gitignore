@@ -2,3 +2,4 @@ target
 stacktrace.log
 *.zip
 plugin.xml
+.idea
