@@ -31,7 +31,7 @@ grails.project.dependency.resolution = {
         }
     }
     dependencies {
-        runtime 'org.mozilla:rhino:1.7R3'
+        runtime 'org.mozilla:rhino:1.7R4'
 
         test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
     }
