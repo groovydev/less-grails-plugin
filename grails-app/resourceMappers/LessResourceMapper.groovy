@@ -1,6 +1,5 @@
-import org.grails.plugin.resource.mapper.MapperPhase
 import org.codehaus.groovy.grails.commons.GrailsApplication
-import java.util.concurrent.ConcurrentHashMap
+import org.grails.plugin.resource.mapper.MapperPhase
 
 /**
  * Less resource mapping. Compile .less files into .css files.
@@ -28,7 +27,7 @@ class LessResourceMapper {
             paths << [path:importPath, order:order]
             paths.sort {it.order}
         }
-        
+
         try {
             log.debug "Compiling LESS file [${lessFile}] into [${cssFile}]"
             lessCompilerService.compile (lessFile, cssFile, paths.collect {it.path})
