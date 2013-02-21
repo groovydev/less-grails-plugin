@@ -1,13 +1,15 @@
 package com.groovydev
 
 import grails.plugin.spock.IntegrationSpec
+import spock.lang.Unroll
 
 class LessCompilerServiceSpec extends IntegrationSpec {
 
     def grailsApplication
     def lessCompilerService
 
-    def "compile LESS into CSS"() {
+    @Unroll
+    def "compile #srcLessFile into CSS"() {
         when:
         def tmpTarget = File.createTempFile("LessCompilerServiceSpec", ".css")
         tmpTarget.deleteOnExit()
