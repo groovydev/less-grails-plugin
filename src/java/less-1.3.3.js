@@ -4108,7 +4108,7 @@ function extractUrlParts(url, baseUrl) {
 
     returner.hostPart = urlParts[1];
     returner.directories = directories;
-    returner.path = urlParts[1] + directories.join("/");
+    returner.path = (urlParts[1] ? urlParts[1] : '') + directories.join("/");
     returner.fileUrl = returner.path + (urlParts[4] || "");
     returner.url = returner.fileUrl + (urlParts[5] || "");
     return returner;
