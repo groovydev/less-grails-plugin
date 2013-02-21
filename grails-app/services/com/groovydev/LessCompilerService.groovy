@@ -36,11 +36,16 @@ class LessCompilerService {
             script.append(loadResource('shell.js'))
             script.append(loadResource('env.rhino.js'))
             script.append(loadResource('hooks.js'))
-            script.append(loadResource('less-1.3.0.js'))
+            script.append(loadResource('less-1.3.3.js'))
             script.append(loadResource('compile.js'))
 
             def sourceFileName = source.absolutePath.replaceAll("\\\\", "/");
             script.append("compile('${sourceFileName}', ${pathstext});" as String)
+
+            if(log.debugEnabled) {
+                def f = File.createTempFile("lessCompilerService", ".js")
+                f.text = script.toString()
+            }
 
             def result = cx.evaluateString(scope, script.toString(), "<script>", 1, null)
             def css = cx.toString(result)

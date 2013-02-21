@@ -2,10 +2,9 @@ var compile = function(source, paths) {
 
     globalPaths = paths;
 
-    var parser = new(less.Parser)({
-        filename: source
-    });
+    var parser = new(less.Parser);
 
+    var result;
     parser.parse(readFile(source), function (e, tree) {
 
         if (tree)

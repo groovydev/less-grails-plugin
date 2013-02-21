@@ -1,0 +1,5 @@
+less/* is taken directly from the bootstrap source, with responsive* removed just for neatness.
+css/* is a generated sample, hand compared to the bootstrap distribution and taken as equivalent.
+
+Bootstrap is normally built with Recess rather than the standard Less compiler.  Unfortunately this prevents direct comparison against the Bootstrap distributed CSS.
+

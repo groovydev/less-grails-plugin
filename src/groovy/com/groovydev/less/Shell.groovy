@@ -1,15 +1,17 @@
 package com.groovydev.less
 
+import groovy.util.logging.Log4j
 import org.mozilla.javascript.Context
 
+@Log4j
 class Shell {
 
     public static void print(text) {
-//        println text
+        log.debug text
     }
 
     public static String readFile(String filename) {
-//        println "readFile: ${filename}"
+        log.debug "readFile: ${filename}"
         try {
             new File(filename).text
         } catch (Exception e) {
@@ -23,7 +25,7 @@ class Shell {
     }
 
     public static String readUrl(String url) {
-//        println "readUrl: ${url}"
+        log.debug "readUrl: ${url}"
         try {
             new URL(url).text
         } catch (Exception e) {
@@ -32,13 +34,13 @@ class Shell {
     }
 
     public static String resolveUri(String path, org.mozilla.javascript.NativeArray paths) {
-//        println "resolveUri: path=${path}"
+        log.debug "resolveUri: path=${path}"
         for (Object index : paths.getIds()) {
             def it = paths.get(index, null);
             def file = new File(it, path)
-//            println "test exists: ${file}"
+            log.trace "test exists: ${file}"
             if (file.exists()) {
-//                println "found file: ${file}"
+                log.trace "found file: ${file}"
                 return file.toURI().toString();
             }
         }
