@@ -22,6 +22,7 @@ class LessCompilerServiceSpec extends IntegrationSpec {
         where:
         srcLessFile                           | modelCssFile
         "css-only.less"                       | "css-only.css"
+        "bootstrap-2.2.2/less/bootstrap.less" | "bootstrap-2.2.2/css/bootstrap.css"
         "bootstrap-2.3.0/less/bootstrap.less" | "bootstrap-2.3.0/css/bootstrap.css"
     }
 }
