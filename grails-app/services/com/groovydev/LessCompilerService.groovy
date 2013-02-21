@@ -1,10 +1,7 @@
 package com.groovydev
 
-import org.mozilla.javascript.ContextFactory
 import org.mozilla.javascript.Context
-import org.mozilla.javascript.tools.shell.Global
 import org.mozilla.javascript.ScriptableObject
-import org.mozilla.javascript.tools.shell.Main
 
 class LessCompilerService {
 
@@ -39,7 +36,7 @@ class LessCompilerService {
             script.append(loadResource('less-1.3.3.js'))
             script.append(loadResource('compile.js'))
 
-            def sourceFileName = source.absolutePath.replaceAll("\\\\", "/");
+            def sourceFileName = source.absolutePath.replaceAll("\\\\", "/")
             script.append("compile('${sourceFileName}', ${pathstext});" as String)
 
             if(log.debugEnabled) {

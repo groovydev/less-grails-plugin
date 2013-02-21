@@ -4,3 +4,5 @@ stacktrace.log
 plugin.xml
 .idea
 *.iml
+.settings
+web-app
