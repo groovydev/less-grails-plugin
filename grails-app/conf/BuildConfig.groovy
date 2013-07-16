@@ -24,7 +24,7 @@ grails.project.dependency.resolution = {
             export = false
         }
 
-        runtime ":resources:1.2.RC2"
+        runtime ":resources:1.2"
         build(":release:2.2.0", ":rest-client-builder:1.0.3") {
             export = false
         }
